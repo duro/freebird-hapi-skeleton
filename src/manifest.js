@@ -10,7 +10,14 @@ const manifest = {
   server: {},
   connections: [ AppConfig.get('/server') ],
   registrations: [
+    { plugin: 'inert' },
+    { plugin: 'vision' },
     {
+      plugin: {
+        register: 'hapi-swagger',
+        options: AppConfig.get('/api')
+      }
+    }, {
       plugin: {
         register: 'good',
         options: AppConfig.get('/logging')

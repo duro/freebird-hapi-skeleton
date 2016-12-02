@@ -17,8 +17,11 @@ const config = {
   },
 
   api: {
-    title: 'API_NAME',
-    description: 'API_DESCRIPTION'
+    info: {
+      title: 'API_NAME',
+      description: 'API_DESCRIPTION',
+      version: pkg.version
+    }
   },
 
   logging: {

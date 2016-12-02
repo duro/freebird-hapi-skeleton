@@ -1,3 +1,5 @@
+import Joi from 'joi'
+
 /**
  * Hello World
  * Returns a hello world message and the hostname of the machine the
@@ -12,8 +14,17 @@ export const register = (server, options, next) => {
   server.route({
     method: 'GET',
     path: '/hello',
-    handler: (request, reply) => {
-      reply('hello world')
+    config: {
+      tags: ['api'],
+      validate: {
+        query: {
+          firstName: Joi.string(),
+          lastName: Joi.string()
+        }
+      },
+      handler: (request, reply) => {
+        reply('hello world')
+      }
     }
   })
 
