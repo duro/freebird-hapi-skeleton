@@ -1,0 +1,11 @@
+{
+  "extends": "walmart/configurations/es6-node",
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "rules": {
+    "quotes": ["error", "single"],
+    "semi": ["error", "never"],
+    "curly": ["error", "multi-line"]
+  }
+}
